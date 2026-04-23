@@ -20,6 +20,10 @@ jobs:
           echo "Hello World" 
           echo "🎉 The job was triggered by event: ${{ github.event_name }}"
           echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ."
+          echo "matrix: ${{ toJSON(matrix) }}"
+          echo "github: ${{ toJSON(github) }}"
+          echo "env: ${{ toJSON(env) }}"
+          echo "runner: ${{ toJSON(runner) }}"
       - uses: actions/checkout@v3.3.0
       - name: List files in the repository
         run: |
